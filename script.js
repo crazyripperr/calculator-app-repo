@@ -1,5 +1,5 @@
 let display = document.getElementById('display');
-let history = document.getElementById('history');
+let historyList = document.getElementById('history-list');
 
 function appendToDisplay(value) {
     display.value += value;
@@ -7,7 +7,6 @@ function appendToDisplay(value) {
 
 function clearDisplay() {
     display.value = '';
-    history.innerHTML = '';
 }
 
 function backspace() {
@@ -30,9 +29,13 @@ function updateHistory(expression) {
     if (expression) {
         let historyItem = document.createElement('p');
         historyItem.textContent = expression;
-        history.appendChild(historyItem);
-        history.scrollTop = history.scrollHeight;
+        historyList.appendChild(historyItem);
+        historyList.scrollTop = historyList.scrollHeight;
     }
+}
+
+function clearHistory() {
+    historyList.innerHTML = '';
 }
 
 document.addEventListener('keydown', function(event) {
