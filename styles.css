@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.calculator {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 320px;
+}
+.display {
+    width: 100%;
+    height: 60px;
+    background-color: #1e90ff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+button {
+    width: 100%;
+    height: 40px;
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.number, .decimal {
+    background-color: #444;
+    color: white;
+}
+.number:hover, .decimal:hover {
+    background-color: #555;
+}
+.operator {
+    width: 81%;
+    height: 40px;
+    background-color: #ff9500;
+    color: white;
+}
+.operator:hover {
+    background-color: #e68a00;
+}
+.equals {
+    background-color: #666;
+    color: white;
+}
+.equals:hover {
+    background-color: #777;
+}
+.clear {
+    background-color: #ff4444;
+    color: white;
+}
+.clear:hover {
+    background-color: #cc0000;
+}
+#equal {
+    width: 195%;
+    height: 40px;
+    margin-left: 8px;
+}
+#cl {
+    width: 81%;
+    height: 40px;
+}
+#space {
+    margin-left: 10px;
+}
+#history {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 320px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+@media (max-width: 400px) {
+    .calculator {
+        width: 90%;
+    }
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #equal {
+        width: 100%;
+        margin-left: 0;
+    }
+    .operator, #cl {
+        width: 100%;
+    }
+    #space {
+        margin-left: 0;
+    }
+}
